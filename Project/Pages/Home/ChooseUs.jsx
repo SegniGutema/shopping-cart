@@ -37,15 +37,15 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <div className="mt-28">
+    <div className="mt-24 max-w-500px mx-auto">
       <h1 className="text-3xl md:text-4xl mx-auto mb-10 text-center">
         Why Choose Us ?
       </h1>
-      <div className="mx-auto max-w-600px flex flex-col px-14">
+      <div className="mx-auto  flex flex-col w-350px md:w-450px gap-6">
         {data.map((item) => (
           <div
             key={item.id}
-            className="flex flex-wrap gap-8 items-center mt-24 px-16 py-12 bg-slate-50 rounded-md w-350px md:w-450px "
+            className="flex flex-wrap gap-6 items-center  px-16 py-12 bg-slate-50 rounded-md  "
           >
             <div className="text-red-400 text-3xl">{item.icon}</div>
             <div>

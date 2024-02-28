@@ -4,7 +4,7 @@ import Testimonial from "./Testimonial";
 
 const Home = () => {
   return (
-    <div className="flex flex-col mt-20 md:mt-24 w-full ">
+    <div className="flex flex-col w-full ">
       <Hero />
       <WhyChooseUs />
       <Testimonial />
