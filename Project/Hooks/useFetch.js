@@ -9,8 +9,8 @@ const useFetch = (url) => {
     const dataFetching = async () => {
       try {
         const response = await fetch(url);
-        const result = await response.data;
-        setData(result.data);
+        const result = await response.json();
+        setData(result);
         setError(null);
       } catch (err) {
         setError(err.message);

@@ -1,9 +1,11 @@
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faInstagram } from "@fortawesome/free-solid-svg-icons";
-// import { faFacebookF } from "@fortawesome/free-solid-svg-icons";
-// import { faTwitter } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebookF,
+  faInstagram,
+  faTwitter,
+  faPinterestP,
+} from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
-// import { faPinterestP } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   const footer = {
@@ -35,26 +37,26 @@ const Footer = () => {
       links: [
         {
           name: "facebook",
-          // icon: <FontAwesomeIcon icon={faFacebookF} size="2x" />,
-          icon: "#",
+          icon: (
+            <FontAwesomeIcon icon={faFacebookF} className="text-blue-600" />
+          ),
           link: "#",
         },
         {
           name: "instagram",
-          icon: "#",
-          // icon: `${(<FontAwesomeIcon icon={faInstagram} />)}`,
+          icon: <FontAwesomeIcon icon={faInstagram} className="text-red-500" />,
           link: "#",
         },
         {
           name: "twitter",
-          icon: "#",
-          // icon: `${(<FontAwesomeIcon icon={faTwitter} />)}`,
+          icon: <FontAwesomeIcon icon={faTwitter} className="text-sky-500" />,
           link: "#",
         },
         {
           name: "pinterest",
-          icon: "#",
-          // icon: `${(<FontAwesomeIcon icon={faPinterestP} />)}`,
+          icon: (
+            <FontAwesomeIcon icon={faPinterestP} className="text-red-700" />
+          ),
           link: "#",
         },
       ],
@@ -115,15 +117,15 @@ const Footer = () => {
           </div>
         </section>
         <section>
-          <ul className="flex  gap-6">
+          <ul className="flex  gap-8">
             {footer.contacts.links.map((link) => (
               <li key={link.name}>
-                <Link
-                  to={link.link}
-                  className="cursor pointer hover:text-red-400 active:bg-red-500"
+                <a
+                  className="text-3xl rounded-full cursor pointer"
+                  href={link.link}
                 >
-                  {link.icon}
-                </Link>
+                  <span>{link.icon}</span>
+                </a>
               </li>
             ))}
           </ul>
