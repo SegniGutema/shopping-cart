@@ -4,6 +4,7 @@ import Error from "./Pages/Error";
 import Home from "./Pages/Home/Home";
 import About from "./Pages/About/About";
 import ContactUs from "./Pages/Contact/ContactUs";
+import CartPage from "./Pages/Cart/CartPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactUs />} />
+          <Route path="/cart" element={<CartPage />} />
           <Route path="*" element={<Error />} />
         </Route>
       </Routes>

@@ -19,7 +19,6 @@ const useFetch = (url) => {
         setLoading(false);
       }
     };
-
     dataFetching();
   }, [url]);
 

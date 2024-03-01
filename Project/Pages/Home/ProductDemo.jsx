@@ -1,7 +1,9 @@
 import PrimaryButton from "../../Components/ButtonPrimary";
+import { useCartContext } from "../../Context/CartContext";
 import useFetch from "../../Hooks/useFetch";
 
 const Product = ({ data }) => {
+  const { addToCart } = useCartContext();
   const products = data;
   return (
     <div className="mx-auto mt-20 flex flex-wrap gap-6 w-full">
@@ -17,7 +19,9 @@ const Product = ({ data }) => {
           />
           <p className="ml-4">{product.title}</p>
           <p className="ml-4 text-xl text-red-300">${product.price}</p>
-          <PrimaryButton>Add to Cart</PrimaryButton>
+          <PrimaryButton clickHandler={() => addToCart(product)}>
+            Add to Cart
+          </PrimaryButton>
         </div>
       ))}
     </div>

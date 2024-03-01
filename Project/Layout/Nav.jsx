@@ -3,6 +3,21 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { useCartContext } from "../Context/CartContext";
+
+const Cart = () => {
+  const { cartItems } = useCartContext();
+  return (
+    <Link to={"/cart"} className="">
+      <span className="relative">
+        <FontAwesomeIcon icon={faShoppingCart} className=" cursor-pointer" />
+        <div className="text-black text-sm min-w-6 min-h-6 p-1 text-center bg-red-300 rounded-[100%] absolute right-[-20px] top-1/2 ">
+          {cartItems.length}
+        </div>
+      </span>
+    </Link>
+  );
+};
 
 const Nav = () => {
   const Links = [
@@ -41,10 +56,8 @@ const Nav = () => {
             </li>
           ))}
         </ul>
-        <div className="text-3xl ml-5 min-[900px]:ml-8 flex items-center cursor-pointer">
-          <Link to={"/cart"}>
-            <FontAwesomeIcon icon={faShoppingCart} />
-          </Link>
+        <div className="text-3xl mx-5 min-[900px]:ml-8 flex items-center">
+          <Cart />
         </div>
         <div
           onClick={() => setOpen(!open)}
