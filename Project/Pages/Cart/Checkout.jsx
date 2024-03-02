@@ -6,7 +6,11 @@ const SuccessAlert = () => {
   return (
     <div className="fixed top-20 md:top-24   right-8 md:right-12 w-fit h-fit p-4  mx-auto rounded-xl border-2  border-green-500 flex flex-col items-center gap-4 bg-white">
       <h1 className="font-bold text-2xl">Checkout was successful</h1>
-      <FontAwesomeIcon icon={faCheckCircle} size="15px" />
+      <FontAwesomeIcon
+        className="text-green-500 text-4xl"
+        icon={faCheckCircle}
+        size="20px"
+      />
       <p className="text-xl`">Thanks for shopping with us </p>
     </div>
   );
