@@ -1,10 +1,9 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { useCartContext } from "../../Context/CartContext";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import { ResetCart } from "./RemoveCartItem";
+import { CheckoutAll } from "./Checkout";
 
-const CartInfo = ({ isCheckout, handleCheckout }) => {
-  const [isConfirmedCheckout, setIsConfirmedCheckout] = useState(false);
+const CartInfo = () => {
   const { cartItems, resetCart } = useCartContext();
 
   const totalPrice = useMemo(() => {
@@ -19,66 +18,10 @@ const CartInfo = ({ isCheckout, handleCheckout }) => {
         <span className="text-xl">Total items : {cartItems.length}</span>
         <span className="text-xl">Total Price : $ {totalPrice}</span>
       </div>
-      <div className="float-right pr-6 flex flex-wrap gap-6">
-        <button
-          className={` text-green-600 hover:underline text-xl ${
-            cartItems.length === 0 ? "hidden" : "block"
-          }`}
-          onClick={() => handleCheckout()}
-        >
-          checkout
-        </button>
-        <button
-          className={`text-red-800 hover:underline text-xl  ${
-            cartItems.length === 0 ? "hidden" : "block"
-          }`}
-          onClick={() => {
-            resetCart();
-          }}
-        >
-          reset
-        </button>
-      </div>
-      {isCheckout && (
-        <div className="absolute top-full right-8 md:right-12  flex flex-col gap-4 items-center p-8  bg-slate-50 text-black  border-2 border-green-600  text-lg rounded-lg">
-          <h2 className="text-3xl">Confirm checkout</h2>
-          <p className="text-xl">You have checked :</p>
-          <ul>
-            <li className="text-xl">
-              Items : {cartItems.length} {"(types)"}
-            </li>
-            <li className="text-xl">Total Price : $ {totalPrice}</li>
-          </ul>
-          <div className="flex gap-6">
-            <button
-              className="text-green-600"
-              onClick={() => {
-                () => setIsConfirmedCheckout(!isConfirmedCheckout);
-                handleCheckout();
-              }}
-            >
-              Confirm
-            </button>
-            <button className="text-red-700" onClick={() => handleCheckout()}>
-              Cancel
-            </button>
-          </div>
-        </div>
-      )}
-      {isConfirmedCheckout && (
-        <div className="absolute top-[100%] right-8 md:right-12  flex flex-col gap-4 items-center p-8  bg-slate-50 text-black  border-2 border-green-600  text-lg rounded-lg">
-          <h1>Checkout was successful</h1>
-          <FontAwesomeIcon icon={faCheckCircle} size="5px" />
-          <p>Thanks for shopping with us</p>
-          <button
-            onClick={() => {
-              resetCart();
-              setIsConfirmedCheckout(!isConfirmedCheckout);
-            }}
-            className="text-white bg-green-500 w-fit px-6 py-4"
-          >
-            Ok
-          </button>
+      {cartItems.length > 0 && (
+        <div className="float-right pr-6 flex flex-wrap gap-6">
+          <CheckoutAll reset={resetCart} />
+          <ResetCart reset={resetCart} />
         </div>
       )}
     </div>

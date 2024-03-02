@@ -1,6 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { useCartContext } from "../../Context/CartContext";
+import { RemoveItem } from "./RemoveCartItem";
+import { Checkout } from "./Checkout";
 
 const CartItems = () => {
   const {
@@ -24,7 +26,9 @@ const CartItems = () => {
             <p className="text-xl">{item.description}</p>
             <p className="text-xl">
               price:{" "}
-              <span className="text-red-500">${item.price.toFixed(2)}</span>
+              <span className="text-red-600 font-bold">
+                ${item.price.toFixed(2)}
+              </span>
             </p>
             <p>
               <span className="text-xl mr-3">quantity:</span>
@@ -51,21 +55,10 @@ const CartItems = () => {
             </p>
             <div className="flex gap-6">
               {" "}
-              <button
-                className="bg-red-400 px-3 py-2 w-fit text-white text-xl"
-                onClick={() => removeFromCart(item.id)}
-              >
-                remove
-              </button>
-              <button
-                className="bg-green-500 px-3 py-2 w-fit text-white text-xl"
-                onClick={() => removeFromCart(item.id)}
-              >
-                checkout
-              </button>
+              <Checkout item={item} removeFromCart={removeFromCart} />
+              <RemoveItem removeFromCart={removeFromCart} item={item} />
             </div>
           </div>
-          {}
         </div>
       ))}
     </div>
