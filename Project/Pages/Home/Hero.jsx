@@ -1,5 +1,6 @@
 import NormalButton from "../../Components/ButtonNormal";
 import PrimaryButton from "../../Components/ButtonPrimary";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -18,8 +19,12 @@ const Hero = () => {
           oluptatum iure ipsam
         </p>
         <div className="flex gap-4 items-center">
-          <PrimaryButton>SHOP NOW</PrimaryButton>
-          <NormalButton>Read More</NormalButton>
+          <Link to="/products">
+            <PrimaryButton>SHOP NOW</PrimaryButton>
+          </Link>
+          <Link to="/about">
+            <NormalButton>Read More</NormalButton>
+          </Link>
         </div>
       </div>
       {/* <div>

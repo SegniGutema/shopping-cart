@@ -32,7 +32,9 @@ const Nav = () => {
   return (
     <div className="bg-white fixed w-full  top-0 left-0 flex items-center justify-between  z-10 shadow-md md:px-20 px-8 h-20 md:h-24">
       <div className="md:text-3xl text-2xl font-bold">
-        Dubai<span className="text-red-500">Tera</span>
+        <Link to="/">
+          Dubai<span className="text-red-500">Tera</span>
+        </Link>
       </div>
       <div className="flex gap-2">
         <ul

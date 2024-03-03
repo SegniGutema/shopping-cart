@@ -7,7 +7,7 @@ const SuccessAlert = () => {
     <div className="fixed top-20 md:top-24   right-8 md:right-12 w-fit h-fit p-4  mx-auto rounded-xl border-2  border-green-500 flex flex-col items-center gap-4 bg-white">
       <h1 className="font-bold text-2xl">Checkout was successful</h1>
       <FontAwesomeIcon
-        className="text-green-500 text-4xl text-3xl"
+        className="text-green-500 text-4xl"
         icon={faCheckCircle}
       />
       <p className="text-xl`">Thanks for shopping with us </p>
@@ -94,7 +94,7 @@ export const CheckoutAll = ({ reset }) => {
         className=" text-green-500 text-xl hover:underline"
         onClick={() => setCheckoutClicked(!checkoutClicked)}
       >
-        Checkout
+        Checkout All
       </button>
       {checkoutClicked && (
         <div className="fixed top-0 bottom-0 my-auto left-0 right-0 w-fit h-fit p-8  mx-auto rounded-xl border-2  border-red-700 flex flex-col gap-6 bg-white">

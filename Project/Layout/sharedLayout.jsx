@@ -8,7 +8,7 @@ const SharedLayout = () => {
     <>
       <CartContextProvider>
         <Nav />
-        <section className="mt-20 md:mt-24">
+        <section className="mt-20 md:mt-24 min-h-screen">
           <Outlet />
         </section>
       </CartContextProvider>

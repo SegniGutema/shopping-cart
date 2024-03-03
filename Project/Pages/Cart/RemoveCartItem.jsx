@@ -55,7 +55,7 @@ export const ResetCart = ({ reset }) => {
           setResetClicked(!resetClicked);
         }}
       >
-        reset
+        Clear
       </button>
       {resetClicked && (
         <div className="fixed top-0 bottom-0 my-auto left-0 right-0 w-fit h-fit p-8  mx-auto rounded-xl border-2  border-red-700 flex flex-col gap-6 bg-white">
