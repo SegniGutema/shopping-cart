@@ -109,6 +109,7 @@ export function CartContextProvider({ children }) {
       decrementItemQuantity,
       setItemQuantity,
       removeFromCart,
+      resetCart,
     ]
   );
 

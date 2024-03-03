@@ -35,7 +35,7 @@ const Testimonial = () => {
       </div>
       <div className="mx-auto">
         {testimonials.map((testifier) => (
-          <div key={testifier.name} className="flex flex-col gap-6 mb-16">
+          <div key={testifier.name} className="flex flex-col gap-6 mb-16 ">
             <img
               className="mx-auto"
               src={testifier.img}
