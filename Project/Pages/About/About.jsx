@@ -9,7 +9,10 @@ const About = () => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis iusto
           suscipit rem velit voluptas culpa dolores quisquam dolorem officia
           deserunt. Aspernatur architecto repudiandae assumenda blanditiis eos
-          provident esse et quia!
+          provident esse et quia!Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Facilis iusto suscipit rem velit voluptas culpa
+          dolores quisquam dolorem officia deserunt. Aspernatur architecto
+          repudiandae assumenda blanditiis eos provident esse et quia!
         </p>
       </div>
       <div>
@@ -22,7 +25,11 @@ const About = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
             iusto suscipit rem velit voluptas culpa dolores quisquam dolorem
             officia deserunt. Aspernatur architecto repudiandae assumenda
-            blanditiis eos provident esse et quia!
+            blanditiis eos provident esse et quia! Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Facilis iusto suscipit rem velit
+            voluptas culpa dolores quisquam dolorem officia deserunt. Aspernatur
+            architecto repudiandae assumenda blanditiis eos provident esse et
+            quia!
           </p>
         </div>
         <div>
@@ -31,7 +38,11 @@ const About = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
             iusto suscipit rem velit voluptas culpa dolores quisquam dolorem
             officia deserunt. Aspernatur architecto repudiandae assumenda
-            blanditiis eos provident esse et quia!
+            blanditiis eos provident esse et quia! Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Facilis iusto suscipit rem velit
+            voluptas culpa dolores quisquam dolorem officia deserunt. Aspernatur
+            architecto repudiandae assumenda blanditiis eos provident esse et
+            quia!
           </p>
         </div>
       </div>
@@ -40,9 +51,10 @@ const About = () => {
           Our Services
         </h1>
         <div>
-          <ul>
+          <ul className="text-center">
             <li className="text-lg font-bold mb-6">Free Shipping</li>
-            <li className="text-lg font-bold mb-6">Laundry</li>
+            <li className="text-lg font-bold mb-6">Replacement</li>
+            <li className="text-lg font-bold mb-6">Repairing</li>
             <li className="text-lg font-bold mb-6">Outfit consultancy</li>
           </ul>
         </div>

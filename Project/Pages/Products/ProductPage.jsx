@@ -1,24 +1,25 @@
 import Products from "./Products";
 import { useState, useMemo } from "react";
-import useFetch from "../../Hooks/useFetch";
+import UseFetch from "../../Hooks/useFetch";
 import Filter from "./Filter";
 
-const ProductPage = () => {
-  const { data, loading, error } = useFetch(
-    "https://fakestoreapi.com/products"
-  );
+const initialFilters = {
+  category: "",
+  price: [0, 1000],
+  alphabet: "",
+  sortDirection: "asc",
+};
 
-  const [filters, setFilters] = useState({
-    category: "",
-    price: [0, 1000],
-    alphabet: "",
-    sortDirection: "asc",
-  });
+const { data, loading, error } = UseFetch("https://fakestoreapi.com/products");
+export const products = data;
+
+const ProductPage = () => {
+  const [filters, setFilters] = useState(initialFilters);
 
   const filteredProducts = useMemo(() => {
     let filteredList = [];
     if (data) {
-      filteredList = data.filter((product) => {
+      filteredList = products.filter((product) => {
         const { category, price, alphabet } = filters;
         return (
           (!category || category === product.category) &&
@@ -33,10 +34,14 @@ const ProductPage = () => {
     return filters.sortDirection === "asc"
       ? filteredList.sort((a, b) => a.title.localeCompare(b.title))
       : filteredList.sort((a, b) => b.title.localeCompare(a.title));
-  }, [filters, data]);
+  }, [filters]);
 
   const handleFilterChange = (newFilters) => {
     setFilters({ ...filters, ...newFilters });
+  };
+
+  const handleResetFilter = () => {
+    setFilters(initialFilters);
   };
 
   return (
@@ -50,8 +55,17 @@ const ProductPage = () => {
       {error && <div className="mx-auto text-2xl text-center">{error}</div>}
       {data && (
         <div>
-          <Filter onFilterChange={handleFilterChange} />
-          <Products products={filteredProducts} />
+          <Filter
+            onFilterChange={handleFilterChange}
+            onResetFilter={handleResetFilter}
+          />
+          {filteredProducts.length > 0 ? (
+            <Products products={filteredProducts} />
+          ) : (
+            <div className="mx-auto text-lg text-center mt-24">
+              Sorry, We do not have products with filters you provided
+            </div>
+          )}
         </div>
       )}
     </div>

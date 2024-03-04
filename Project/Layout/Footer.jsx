@@ -32,7 +32,6 @@ const Footer = () => {
         { name: "Free Shipping", link: "#" },
         { name: "Replacement", link: "#" },
         { name: "Repairing", link: "#" },
-        { name: "Repairing", link: "#" },
         { name: "Outfit consultancy", link: "#" },
       ],
     },
@@ -111,7 +110,7 @@ const Footer = () => {
                 {footer.services.header}
               </h2>
               <ul className="flex flex-col gap-4">
-                {footer.products.links.map((link) => (
+                {footer.services.links.map((link) => (
                   <li key={link.name}>
                     <Link
                       to={link.link}
@@ -128,12 +127,13 @@ const Footer = () => {
             <ul className="flex  gap-8">
               {footer.contacts.links.map((link) => (
                 <li key={link.name}>
-                  <a
+                  <Link
+                    to={"#"}
                     className="text-3xl rounded-full cursor pointer"
                     href={link.link}
                   >
                     <span>{link.icon}</span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

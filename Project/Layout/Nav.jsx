@@ -1,11 +1,16 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faShoppingCart,
+  faMagnifyingGlass,
+} from "@fortawesome/free-solid-svg-icons";
 import { useCartContext } from "../Context/CartContext";
+import SearchedProducts from "../Pages/SearchPage/SearchedProducts";
 
-const Cart = () => {
+// Link to Cart Page
+const LinkToCart = () => {
   const { cartItems } = useCartContext();
   return (
     <Link to={"/cart"} className="">
@@ -19,6 +24,28 @@ const Cart = () => {
   );
 };
 
+// Link to Search Page
+const LinkToSearchPage = () => {
+  const [showSearchBox, setShowSearchBox] = useState(false);
+
+  const handleSearchBoxDisplay = () => {
+    setShowSearchBox(!showSearchBox);
+  };
+
+  return (
+    <>
+      <button
+        onClick={handleSearchBoxDisplay}
+        className="cursor-pointer text-3xl mx-5 min-[900px]:ml-8 flex items-center"
+      >
+        <FontAwesomeIcon icon={faMagnifyingGlass} />
+      </button>
+      {showSearchBox && <SearchedProducts />}
+    </>
+  );
+};
+
+// Header navigation to different pages
 const Nav = () => {
   const Links = [
     { name: "HOME", link: "/" },
@@ -58,8 +85,9 @@ const Nav = () => {
             </li>
           ))}
         </ul>
+        <LinkToSearchPage />
         <div className="text-3xl mx-5 min-[900px]:ml-8 flex items-center">
-          <Cart />
+          <LinkToCart />
         </div>
         <div
           onClick={() => setOpen(!open)}
