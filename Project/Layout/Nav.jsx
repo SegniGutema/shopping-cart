@@ -5,9 +5,10 @@ import {
   faBars,
   faShoppingCart,
   faMagnifyingGlass,
+  faClose,
 } from "@fortawesome/free-solid-svg-icons";
 import { useCartContext } from "../Context/CartContext";
-import SearchedProducts from "../Pages/SearchPage/SearchedProducts";
+import SearchResults from "../Pages/SearchPage/SearchResult";
 
 // Link to Cart Page
 const LinkToCart = () => {
@@ -40,7 +41,17 @@ const LinkToSearchPage = () => {
       >
         <FontAwesomeIcon icon={faMagnifyingGlass} />
       </button>
-      {showSearchBox && <SearchedProducts />}
+      {showSearchBox && (
+        <div className="absolute top-0 left-0 right-0 z-30 w-full h-auto min-h-screen backdrop-brightness-50 backdrop-blur-lg">
+          <SearchResults clickHandler={handleSearchBoxDisplay} />
+          <button
+            onClick={handleSearchBoxDisplay}
+            className="absolute top-5 md right-5 text-black text-4xl rounded-full bg-transparent p-3 z-40"
+          >
+            <FontAwesomeIcon icon={faClose} />
+          </button>
+        </div>
+      )}
     </>
   );
 };

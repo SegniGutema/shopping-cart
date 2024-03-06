@@ -4,22 +4,24 @@ import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
 const Testimonial = () => {
   const testimonials = [
     {
-      name: "brad",
+      name: "Brad",
       testimony:
-        "DubaiTera is one of the best shopping site I have ever come across aefnvg qetiokbv oefkfnoe  bkqoe oebvqob qenvb 34j wrbno tboqekgo prknbwrib ",
-      //   img: ".../Assets/c3.png",
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque blanditiis, quos, voluptatibus obcaecati delectus quasi esse quaerat quae illum corrupti dicta veritatis iste laborum dolores quo eum vero, natus nobis. adipisicing elit. Itaque blanditiis, quos, voluptatibus obcaecati delectus quasi esse quaerat quae illum corrupti dicta veritatis iste laborum dolores quo eum vero, natus nobis.",
       img: "Project/Assets/c2.png",
+      role: "Customer",
     },
     {
       name: "Lucy",
       testimony:
-        "DubaTera makes the process of purchasing very easy for me that's why its always my choice  roenv o wrnv    owvp wdvnrjv vpvt ",
+        "Lorem ipsum dolor sit amet, iste laborum dolores quo eum vero, natus nobis. adipisicing elit. Itaque blanditiis, quos, voluptatibus obcaecati delectus quasi esse quaerat quae illum corrupti dicta veritatis iste laborum dolores quo eum vero, natus nobis.",
       img: "Project/Assets/user1.png",
+      role: "Partner",
     },
     {
       name: "John",
       testimony:
-        "DubaiTera is my number one choice and always has been weqjnvjkne jerjknv eroinvoer eronvqeor rqwonvsokl   qerqvorenv reon",
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque blanditiis, quos, voluptatibus obcaecati delectus quasi esse quaerat quae illum corrupti dicta veritatis iste laborum dolores quo eum vero, natus nobis. adipisicing elit. Itaque blanditiis, quos, voluptatibus obcaecati delectus quasi esse quaerat quae illum corrupti dicta veritatis iste laborum dolores quo eum vero, natus nobis.",
+      role: "Designer",
       img: "Project/Assets/c3.png",
     },
   ];
@@ -30,17 +32,25 @@ const Testimonial = () => {
           Still not convinced ?
         </h2>
         <p className="text-lg mx-auto md:text-xl">
-          Check what or customers are saying
+          Check what our customers are saying
         </p>
       </div>
       <div className="mx-auto">
         {testimonials.map((testifier) => (
           <div key={testifier.name} className="flex flex-col gap-6 mb-16 ">
-            <img
-              className="mx-auto"
-              src={testifier.img}
-              alt={testifier.name + "'s-img"}
-            />
+            <div className="flex gap-3 items-center">
+              <img
+                className=""
+                src={testifier.img}
+                alt={testifier.name + "'s-img"}
+              />
+              <div>
+                <p className="align-bottom text-lg font-bold">
+                  {testifier.name}
+                </p>
+                <p>{testifier.role}</p>
+              </div>
+            </div>
             <p className="mx-auto max-w-96  relative ">
               <span className="absolute left-[-30px] top-[-35px] md:left-[-60px] md:top-[-55px] ">
                 <FontAwesomeIcon

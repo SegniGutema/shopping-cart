@@ -1,25 +1,28 @@
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link, useParams } from "react-router-dom";
-import { products } from "./ProductPage";
+import { useParams } from "react-router-dom";
+import { useProductContext } from "../../Context/ProductContext";
+import { useCartContext } from "../../Context/CartContext";
 
 const SingleProduct = () => {
   const { productId } = useParams();
-  const product = products.find((product) => product.id === productId);
-  const { title, image, description, price } = product;
+  const { products } = useProductContext();
+  const { addToCart } = useCartContext();
+
+  let singleProduct = products.find((product) => product.id === productId);
 
   return (
-    <div className="w-full max-w-[800px] mx-auto flex flex-wrap gap-8">
-      <img src={image} alt="title" className="max-w-[250px] aspect-square" />
+    <div className="flex flex-wrap w-full max-w-[800px] items-center">
       <div>
-        <p>{title}</p>
-        <p>{description}</p>
-        <p>$ {price}</p>
+        <img
+          className="w-[300] h-[300px] "
+          src={singleProduct.image}
+          alt={singleProduct.title}
+        />
       </div>
-      <div className="absolute top-24 md:28 left-6 text-black">
-        <Link to="products">
-          <FontAwesomeIcon icon={faArrowLeft} />
-        </Link>
+      <div>
+        <h2>{singleProduct.title}</h2>
+        <p>{singleProduct.description}</p>
+        <p>Price: ${singleProduct.price}</p>
+        <button onClick={() => addToCart(singleProduct)}>Add To Cart</button>
       </div>
     </div>
   );

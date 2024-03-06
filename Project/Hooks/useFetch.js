@@ -4,6 +4,7 @@ const useFetch = (url) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [retryCount, setRetryCount] = useState(0);
 
   useEffect(() => {
     const dataFetching = async () => {
@@ -13,14 +14,23 @@ const useFetch = (url) => {
         setData(result);
         setError(null);
       } catch (err) {
-        setError(err.message);
-        setData(null);
+        if (retryCount < 3) {
+          setTimeout(() => {
+            dataFetching();
+            setRetryCount(retryCount + 1);
+          }, 2000);
+          return;
+        } else {
+          setError("Failed to load data.");
+          setError(err.message);
+          setData(null);
+        }
       } finally {
         setLoading(false);
       }
     };
     dataFetching();
-  }, [url]);
+  }, [retryCount, url]);
 
   return {
     data,

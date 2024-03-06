@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 const Hero = () => {
   return (
     <section
-      style={{ backgroundImage: "url('Project/Assets/slider_1.jpg')" }}
-      className="min-h-screen w-full  flex  items-center px-12 md:px-20  relative right-0"
+      // style={{ backgroundImage: "url('Project/Assets/slider_1.jpg')" }}
+      className="bg-emerald-500 pt-14 min-h-screen w-full flex gap-y-10 flex-wrap items-center justify-center px-12 md:px-20"
     >
-      <div className="flex flex-col gap-10">
-        <h1 className="font-bold text-4xl">
+      <div className="flex flex-col gap-10 w-fit">
+        <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl">
           Dubai<span className="text-red-400">Tera</span> Online Shopping
         </h1>
-        <p className="text-lg">
+        <p className="text-lg md:text-xl lg:text-2xl">
           Lorem ipsum dolor sit ametvoluptatibus <br />
           voluptatum iure ipsam quae?
           <br />
@@ -27,13 +27,13 @@ const Hero = () => {
           </Link>
         </div>
       </div>
-      {/* <div>
+      <div className="w-fit">
         <img
-          className=""
-          src=".../Assets/deal_ofthe_week.png"
+          className="w-[400px] -skew-x-12 -skew-y-3"
+          src="Project/Assets/—Pngtree—online shopping e-commerce with cellphone_5347885.png"
           alt="hero-img"
         ></img>
-      </div> */}
+      </div>
     </section>
   );
 };

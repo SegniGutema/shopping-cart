@@ -1,10 +1,11 @@
-import { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 
-const Search = ({ products, onSearch }) => {
+// eslint-disable-next-line react/prop-types
+const Search = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   // Debounced function to optimize performance (explained later)
-  const debouncedSearch = useMemo(() => {
+  const debouncedSearch = React.useMemo(() => {
     let timerId;
     return (query) => {
       clearTimeout(timerId);
@@ -22,9 +23,7 @@ const Search = ({ products, onSearch }) => {
   // Handle user input
   const handleChange = (event) => {
     setSearchTerm(event.target.value.toLowerCase());
-    if (products) {
-      onSearch(searchTerm);
-    }
+    onSearch(searchTerm);
   };
 
   return (
