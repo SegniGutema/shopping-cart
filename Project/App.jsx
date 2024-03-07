@@ -5,7 +5,6 @@ import Home from "./Pages/Home/Home";
 import About from "./Pages/About/About";
 import ContactUs from "./Pages/Contact/ContactUs";
 import CartPage from "./Pages/Cart/CartPage";
-import ProductPage from "./Pages/Products/MultipleProductPage";
 import SingleProduct from "./Pages/Products/SingleProduct";
 import Products from "./Pages/Products/Products";
 
@@ -18,10 +17,8 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="contact" element={<ContactUs />} />
           <Route path="cart" element={<CartPage />} />
-          <Route path="products" element={<ProductPage />}>
-            <Route index element={<Products />} />
-            <Route path="products/:productId" element={<SingleProduct />} />
-          </Route>
+          <Route index element={<Products />} />
+          <Route path="products/:productId" element={<SingleProduct />} />
           <Route path="*" element={<Error />} />
         </Route>
       </Routes>

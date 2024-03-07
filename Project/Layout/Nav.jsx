@@ -1,58 +1,48 @@
-import { useState } from "react";
+import { useState, useContext, useRef } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
+  faSearch,
   faShoppingCart,
-  faMagnifyingGlass,
-  faClose,
 } from "@fortawesome/free-solid-svg-icons";
 import { useCartContext } from "../Context/CartContext";
-import SearchResults from "../Pages/SearchPage/SearchResult";
+import { SearchContext } from "../Context/SearchContext";
+import SearchBar from "../Pages/SearchPage/Search";
 
 // Link to Cart Page
-const LinkToCart = () => {
+const CartIcon = () => {
   const { cartItems } = useCartContext();
   return (
     <Link to={"/cart"} className="">
-      <span className="relative">
+      <div className="text-3xl flex items-center relative">
         <FontAwesomeIcon icon={faShoppingCart} className=" cursor-pointer" />
         <div className="text-black text-sm min-w-6 min-h-6 p-1 text-center bg-red-300 rounded-[100%] absolute right-[-20px] top-1/2 ">
           {cartItems.length}
         </div>
-      </span>
+      </div>
     </Link>
   );
 };
 
-// Link to Search Page
-const LinkToSearchPage = () => {
-  const [showSearchBox, setShowSearchBox] = useState(false);
+const SearchIcon = () => {
+  const { isOpen, setIsOpen } = useContext(SearchContext);
+  const inputRef = useRef(null);
 
-  const handleSearchBoxDisplay = () => {
-    setShowSearchBox(!showSearchBox);
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
   };
 
   return (
-    <>
-      <button
-        onClick={handleSearchBoxDisplay}
-        className="cursor-pointer text-3xl mx-5 min-[900px]:ml-8 flex items-center"
-      >
-        <FontAwesomeIcon icon={faMagnifyingGlass} />
+    <div>
+      <button className="text-3xl mx-3" onClick={handleClick}>
+        <FontAwesomeIcon icon={faSearch} />
       </button>
-      {showSearchBox && (
-        <div className="absolute top-0 left-0 right-0 z-30 w-full h-auto min-h-screen backdrop-brightness-50 backdrop-blur-lg">
-          <SearchResults clickHandler={handleSearchBoxDisplay} />
-          <button
-            onClick={handleSearchBoxDisplay}
-            className="absolute top-5 md right-5 text-black text-4xl rounded-full bg-transparent p-3 z-40"
-          >
-            <FontAwesomeIcon icon={faClose} />
-          </button>
-        </div>
-      )}
-    </>
+      {isOpen && <SearchBar ref={inputRef} />}
+    </div>
   );
 };
 
@@ -60,18 +50,20 @@ const LinkToSearchPage = () => {
 const Nav = () => {
   const Links = [
     { name: "HOME", link: "/" },
-    { name: "PRODUCTS", link: "/products" },
+    { name: "SHOP", link: "/products" },
     { name: "ABOUT", link: "/about" },
-    { name: "CONTACT US", link: "/contact" },
+    { name: "CONTACT", link: "/contact" },
   ];
 
   let [open, setOpen] = useState(false);
 
   return (
-    <div className="bg-white fixed w-full  top-0 left-0 flex items-center justify-between  z-10 shadow-md md:px-20 px-8 h-20 md:h-24">
+    <div className="bg-white fixed w-full top-0 left-0 flex items-center justify-between  z-10 shadow-md md:px-16 px-8 h-20 md:h-24">
       <div className="md:text-3xl text-2xl font-bold">
         <Link to="/">
-          Dubai<span className="text-red-500">Tera</span>
+          <div className="flex gap-3 items-center">
+            <img src="../Assets/panda.png" alt="x" className="w-16 h-16" />
+          </div>
         </Link>
       </div>
       <div className="flex gap-2">
@@ -96,13 +88,12 @@ const Nav = () => {
             </li>
           ))}
         </ul>
-        <LinkToSearchPage />
-        <div className="text-3xl mx-5 min-[900px]:ml-8 flex items-center">
-          <LinkToCart />
-        </div>
+        <SearchIcon />
+        <CartIcon />
+
         <div
           onClick={() => setOpen(!open)}
-          className="text-3xl ml-5 min-[900px]:ml-8 flex items-center cursor-pointer min-[900px]:hidden"
+          className="text-3xl ml-4 min-[900px]:ml-5 flex items-center cursor-pointer min-[900px]:hidden"
         >
           <FontAwesomeIcon icon={faBars} />
         </div>

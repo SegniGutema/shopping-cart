@@ -5,7 +5,6 @@ const Filter = ({ onFilterChange, onResetFilter }) => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(1000);
-  const [alphabet, setAlphabet] = useState("");
   const [sortDirection, setSortDirection] = useState("asc"); // Default sort direction
 
   const handleFilter = () => {
@@ -18,6 +17,10 @@ const Filter = ({ onFilterChange, onResetFilter }) => {
 
   const handleReset = () => {
     onResetFilter();
+    setSelectedCategory("");
+    setMinPrice(0);
+    setMaxPrice(1000);
+    setSortDirection("asc");
   };
 
   return (

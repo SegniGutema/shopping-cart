@@ -1,11 +1,16 @@
 const Promotion = () => {
   return (
-    <section className="flex flex-wrap justify-between items-center min-h-screen bg-orange-400 w-full px-12 md:px-14 pt-14 mt-14">
+    <section className="flex flex-wrap gap-10 justify-between items-center min-h-screen bg-yellow-400 w-full px-14 md:px-16 py-14 mt-14">
       <div>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-          30% <i>off</i>
+        <h1 className="w-fit text-5xl lg:text-6xl font-bold bg-red-600 text-white px-5 py-4 skew-x-12 -rotate-6">
+          Mega sale
         </h1>
-        <p>Enjoy 30 % discount on tour first purchase </p>
+        <p className="w-fit text-4xl lg:text-5xl font-bold bg-green-600 text-white px-5 py-4 skew-x-12 -rotate-6">
+          Purchase Now
+        </p>
+        <p className="w-fit text-3xl lg:text-4xl font-bold bg-red-600 text-white px-5 py-4 skew-x-12 -rotate-6">
+          With Big Discount !
+        </p>
       </div>
       <div>
         <img

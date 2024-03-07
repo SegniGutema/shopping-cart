@@ -49,7 +49,7 @@ const MultipleProductPage = () => {
         Products
       </h1>
       {loading && (
-        <div className="mx-auto text-2xl text-center">Loading...</div>
+        <div className="mx-auto text-2xl text-center my-12">Loading...</div>
       )}
       {error && (
         <div className="mx-auto text-2xl text-center">{error.message}</div>
