@@ -9,10 +9,7 @@ import {
 import { useCartContext } from "../Context/CartContext";
 import { SearchContext } from "../Context/SearchContext";
 import SearchBar from "../Pages/SearchPage/Search";
-const imgUrl = new URL(
-  "Project/Assets/—Pngtree—online shopping e-commerce with cellphone_5347885.png",
-  import.meta.url
-).href;
+const imgUrl = new URL("Project/Assets/panda.png", import.meta.url).href;
 // Link to Cart Page
 const CartIcon = () => {
   const { cartItems } = useCartContext();
