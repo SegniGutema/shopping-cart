@@ -55,7 +55,7 @@ const ProductList = ({ products }) => {
   const productList = products;
 
   return (
-    <div className="mx-auto mt-20 flex flex-wrap gap-4 w-full">
+    <div className="mx-auto mt-20 flex flex-wrap justify-start gap-4 w-full">
       {productList.map((product) => (
         <Product key={product.id} product={product} addToCart={addToCart} />
       ))}

@@ -46,7 +46,7 @@ const ContactUs = () => {
       </div>
       <div>
         <h2 className="ml-12 text-2xl md:text-3xl font-bold mb-8">Follow Us</h2>
-        <div className="flex gap-12 ml-12 ">
+        <div className="flex flex-wrap gap-6 ml-12 ">
           <Link
             to={"#"}
             className="text-2xl bg-blue-600 p-4 hover:translate-y-[-8px] transition-all ease-linear hover:shadow-stone-500"

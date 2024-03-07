@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section
       // style={{ backgroundImage: "url('Project/Assets/slider_1.jpg')" }}
-      className="bg-emerald-500 py-14 min-h-screen w-full flex gap-10 flex-wrap items-center justify-center px-12 md:px-20"
+      className="bg-emerald-500 py-14 min-h-screen w-full flex gap-10 items-center justify-between px-12 md:px-14 overflow-hidden"
     >
       <div className="flex flex-col gap-10 w-fit mt-20">
         <h1 className="font-bold text-4xl md:text-5xl lg:text-6xl">
@@ -18,7 +18,7 @@ const Hero = () => {
           <br />
           oluptatum iure ipsam
         </p>
-        <div className="flex gap-4 items-center">
+        <div className="flex flex-wrap gap-4 items-center max-sw-[290px]">
           <Link to="/products">
             <PrimaryButton>SHOP NOW</PrimaryButton>
           </Link>
@@ -29,7 +29,7 @@ const Hero = () => {
       </div>
       <div className="w-fit">
         <img
-          className="w-[500px]  -skew-x-12 -skew-y-3"
+          className="max-w-[500px] mx-auto  -skew-x-12 -skew-y-3"
           src="Project/Assets/—Pngtree—online shopping e-commerce with cellphone_5347885.png"
           alt="hero-img"
         ></img>

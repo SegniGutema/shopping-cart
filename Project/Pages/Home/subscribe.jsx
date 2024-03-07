@@ -59,7 +59,7 @@ const Subscribe = () => {
           className="flex flex-wrap gap-4 relative"
         >
           <input
-            className="w-[250px] h-[50px] p-3"
+            className="max-w-[250px] h-[50px] p-3"
             value={email}
             placeholder="email"
             onChange={handleInput}
