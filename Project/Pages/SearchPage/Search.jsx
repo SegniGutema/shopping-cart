@@ -39,7 +39,7 @@ const SearchBar = forwardRef(function SearchBar(props, ref) {
   }, [query, debouncedSearch]);
 
   return (
-    <div className="fixed left-0 right-0 top-0 bg-slate-200 min-h-screen w-full z-10 flex flex-col items-center gap-14 py-14 backdrop-brightness-50">
+    <div className="fixed left-0 right-0 top-0 bg-slate-200 min-h-screen w-screen z-10 flex flex-col items-center gap-14 py-14 backdrop-brightness-50">
       <input
         ref={ref}
         className="outline-none focus:outline-none focus:ring-2 rounded-md py-2 px-3 w-2/4"

@@ -7,14 +7,14 @@ const Testimonial = () => {
       name: "Brad",
       testimony:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque blanditiis, quos, voluptatibus obcaecati delectus quasi esse quaerat quae illum corrupti dicta veritatis iste laborum dolores quo eum vero, natus nobis. adipisicing elit. Itaque blanditiis, quos, voluptatibus obcaecati delectus quasi esse quaerat quae illum corrupti dicta veritatis iste laborum dolores quo eum vero, natus nobis.",
-      img: "Project/Assets/c2.png",
+      img: "/c2.png",
       role: "Customer",
     },
     {
       name: "Lucy",
       testimony:
         "Lorem ipsum dolor sit amet, iste laborum dolores quo eum vero, natus nobis. adipisicing elit. Itaque blanditiis, quos, voluptatibus obcaecati delectus quasi esse quaerat quae illum corrupti dicta veritatis iste laborum dolores quo eum vero, natus nobis.",
-      img: "Project/Assets/user1.png",
+      img: "/user1.png",
       role: "Partner",
     },
     {
@@ -22,7 +22,7 @@ const Testimonial = () => {
       testimony:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque blanditiis, quos, voluptatibus obcaecati delectus quasi esse quaerat quae illum corrupti dicta veritatis iste laborum dolores quo eum vero, natus nobis. adipisicing elit. Itaque blanditiis, quos, voluptatibus obcaecati delectus quasi esse quaerat quae illum corrupti dicta veritatis iste laborum dolores quo eum vero, natus nobis.",
       role: "Designer",
-      img: "Project/Assets/c3.png",
+      img: "/c3.png",
     },
   ];
   return (
