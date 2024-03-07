@@ -13,10 +13,12 @@ const CartInfo = () => {
   }, [cartItems]);
 
   return (
-    <div className="sticky w-full left-0 top-20 font-bold md:top-24 flex flex-wrap justify-between px-8 md:px-12 bg-slate-50 py-4 mb-6">
-      <div className="flex gap-5">
-        <span className="text-xl">Total items : {cartItems.length}</span>
-        <span className="text-xl">Total Price : $ {totalPrice}</span>
+    <div className="w-full top-20 md:top-24 flex flex-wrap justify-between px-8 md:px-12 bg-slate-50 py-4 mb-6">
+      <div className="flex flex-wrap gap-5">
+        <span className="text-lg md:text-xl">
+          Total items : {cartItems.length}
+        </span>
+        <span className="text-lg md:text-xl">Total Price : $ {totalPrice}</span>
       </div>
       {cartItems.length > 0 && (
         <div className="float-right pr-6 flex flex-wrap gap-6">

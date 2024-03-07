@@ -22,7 +22,7 @@ const Product = ({ product, addToCart }) => {
   return (
     <div
       key={id}
-      className="mx-auto w-[190px] flex flex-col gap-2 justify-between min-h-full bg-white p-4 rounded-lg shadow-md overflow-hidden "
+      className="mx-auto w-[230px] flex flex-col gap-2 justify-between min-h-full bg-white p-4 rounded-lg shadow-md overflow-hidden "
       onMouseEnter={handleHover}
       onMouseLeave={handleLeave}
     >
