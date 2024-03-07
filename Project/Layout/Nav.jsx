@@ -62,7 +62,7 @@ const Nav = () => {
       <div className="md:text-3xl text-2xl font-bold">
         <Link to="/">
           <div className="flex gap-3 items-center">
-            <img src="../Assets/panda.png" alt="x" className="w-16 h-16" />
+            <img src="Project/Assets/panda.png" alt="x" className="w-16 h-16" />
           </div>
         </Link>
       </div>
