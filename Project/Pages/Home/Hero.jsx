@@ -1,17 +1,13 @@
 import NormalButton from "../../Components/ButtonNormal";
 import PrimaryButton from "../../Components/ButtonPrimary";
 import { Link } from "react-router-dom";
-
-const imgUrl = new URL(
-  "Project/Assets/—Pngtree—online shopping e-commerce with cellphone_5347885.png",
-  import.meta.url
-).href;
+import imgUrl from "../../Assets/panda.png";
 
 const Hero = () => {
   return (
     <section
       // style={{ backgroundImage: "url('Project/Assets/slider_1.jpg')" }}
-      className="bg-emerald-500 py-14 min-h-screen w-full flex gap-10 items-center justify-between px-12 md:px-14 overflow-hidden"
+      className="bg-emerald-500 py-10 min-h-screen w-full flex gap-10 items-center justify-between px-12 md:px-14 overflow-hidden"
     >
       <div className="flex flex-col gap-10 w-fit mt-20">
         <h1 className="font-bold text-4xl md:text-5xl lg:text-6xl">

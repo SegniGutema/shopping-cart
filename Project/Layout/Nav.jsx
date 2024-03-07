@@ -15,7 +15,7 @@ const CartIcon = () => {
   const { cartItems } = useCartContext();
   return (
     <Link to={"/cart"} className="">
-      <div className="text-3xl flex items-center relative">
+      <div className="text-xl flex items-center relative">
         <FontAwesomeIcon icon={faShoppingCart} className=" cursor-pointer" />
         <div className="text-black text-sm min-w-6 min-h-6 p-1 text-center bg-red-300 rounded-[100%] absolute right-[-20px] top-1/2 ">
           {cartItems.length}
@@ -38,7 +38,7 @@ const SearchIcon = () => {
 
   return (
     <div>
-      <button className="text-3xl mx-3" onClick={handleClick}>
+      <button className="text-xl mx-3" onClick={handleClick}>
         <FontAwesomeIcon icon={faSearch} />
       </button>
       {isOpen && <SearchBar ref={inputRef} />}
@@ -58,7 +58,7 @@ const Nav = () => {
   let [open, setOpen] = useState(false);
 
   return (
-    <div className="bg-white fixed w-full top-0 left-0 flex items-center justify-between  z-10 shadow-md md:px-16 px-8 h-20 md:h-24">
+    <div className="bg-white fixed w-full top-0 left-0 flex items-center justify-between  z-10 shadow-md md:px-16 px-8 h-16 md:h-20">
       <div className="md:text-3xl text-2xl font-bold">
         <Link to="/">
           <div className="flex gap-3 items-center">
@@ -93,7 +93,7 @@ const Nav = () => {
 
         <div
           onClick={() => setOpen(!open)}
-          className="text-3xl ml-4 min-[900px]:ml-5 flex items-center cursor-pointer min-[900px]:hidden"
+          className="text-xl ml-4 min-[900px]:ml-5 flex items-center cursor-pointer min-[900px]:hidden"
         >
           <FontAwesomeIcon icon={faBars} />
         </div>
