@@ -9,7 +9,10 @@ import {
 import { useCartContext } from "../Context/CartContext";
 import { SearchContext } from "../Context/SearchContext";
 import SearchBar from "../Pages/SearchPage/Search";
-
+const imgUrl = new URL(
+  "Project/Assets/—Pngtree—online shopping e-commerce with cellphone_5347885.png",
+  import.meta.url
+).href;
 // Link to Cart Page
 const CartIcon = () => {
   const { cartItems } = useCartContext();
@@ -62,7 +65,7 @@ const Nav = () => {
       <div className="md:text-3xl text-2xl font-bold">
         <Link to="/">
           <div className="flex gap-3 items-center">
-            <img src="Project/Assets/panda.png" alt="x" className="w-16 h-16" />
+            <img src={imgUrl} alt="x" className="w-16 h-16" />
           </div>
         </Link>
       </div>

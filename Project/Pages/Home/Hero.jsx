@@ -2,6 +2,11 @@ import NormalButton from "../../Components/ButtonNormal";
 import PrimaryButton from "../../Components/ButtonPrimary";
 import { Link } from "react-router-dom";
 
+const imgUrl = new URL(
+  "Project/Assets/—Pngtree—online shopping e-commerce with cellphone_5347885.png",
+  import.meta.url
+).href;
+
 const Hero = () => {
   return (
     <section
@@ -30,7 +35,7 @@ const Hero = () => {
       <div className="w-fit">
         <img
           className="max-w-[500px] mx-auto  -skew-x-12 -skew-y-3"
-          src="Project/Assets/—Pngtree—online shopping e-commerce with cellphone_5347885.png"
+          src={imgUrl}
           alt="hero-img"
         ></img>
       </div>
