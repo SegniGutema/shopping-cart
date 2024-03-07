@@ -1,6 +1,7 @@
-import promoImg from "../../Assets/imgbin_discount-tag-with-30-off-discount-tag-discount-label-png.png";
-const img = new Image();
-img.src = promoImg;
+const imgUrl = new URL(
+  "Project/Assets/imgbin_discount-tag-with-30-off-discount-tag-discount-label-png.png",
+  import.meta.url
+).href;
 
 const Promotion = () => {
   return (
@@ -17,7 +18,7 @@ const Promotion = () => {
         </p>
       </div>
       <div className="mx-autos">
-        <img className="w-[300px] lg:w-[400px]" src={img.src} alt="30% off" />
+        <img className="w-[300px] lg:w-[400px]" src={imgUrl} alt="30% off" />
       </div>
     </section>
   );
