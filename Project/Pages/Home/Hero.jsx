@@ -2,7 +2,7 @@ import NormalButton from "../../Components/ButtonNormal";
 import PrimaryButton from "../../Components/ButtonPrimary";
 import { Link } from "react-router-dom";
 import imgUrl from "../../Assets/panda.png";
-
+document.getElementById("hero-img").src = imgUrl;
 const Hero = () => {
   return (
     <section
@@ -31,8 +31,9 @@ const Hero = () => {
       <div className="w-fit">
         <img
           className="max-w-[500px] mx-auto  -skew-x-12 -skew-y-3"
-          src={imgUrl}
+          // src={imgUrl}
           alt="hero-img"
+          id="hero-img"
         ></img>
       </div>
     </section>
