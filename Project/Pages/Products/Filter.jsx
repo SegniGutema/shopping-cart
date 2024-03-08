@@ -28,7 +28,7 @@ const Filter = ({ onFilterChange, onResetFilter }) => {
       <label htmlFor="category">
         Category :
         <select
-          className="ml-3 h-6 w-52"
+          className="ml-3 h-6 w-36"
           id="category"
           value={selectedCategory}
           onChange={(e) => setSelectedCategory(e.target.value)}
@@ -44,7 +44,7 @@ const Filter = ({ onFilterChange, onResetFilter }) => {
       <label htmlFor="min-price">
         Price Min :
         <input
-          className="ml-3  h-6 w-52"
+          className="ml-3  h-6 w-36"
           type="number"
           id="min-price"
           value={minPrice}
@@ -55,7 +55,7 @@ const Filter = ({ onFilterChange, onResetFilter }) => {
       <label htmlFor="max-price">
         Price Max :
         <input
-          className="ml-3  h-6 w-52"
+          className="ml-3  h-6 w-36"
           type="number"
           id="max-price"
           value={maxPrice}
@@ -66,7 +66,7 @@ const Filter = ({ onFilterChange, onResetFilter }) => {
       <label>
         Sort By
         <select
-          className="ml-3 h-6 w-52"
+          className="ml-3 h-6 w-36"
           value={sortDirection}
           onChange={(e) => setSortDirection(e.target.value)}
         >
@@ -77,13 +77,13 @@ const Filter = ({ onFilterChange, onResetFilter }) => {
 
       <div>
         <button
-          className="py-3 px-4 w-fit hover:border-2 hover:border-green rounded-md text-green-500 text-lg mr-5"
+          className="py-3 px-4 w-fit border-2 border-green rounded-md text-green-500 text-lg mr-5"
           onClick={handleFilter}
         >
           Apply Filters
         </button>
         <button
-          className="mt-3 py-3 px-4 w-fit text-lg  hover:border-2 hover:border-green rounded-md text-red-500"
+          className="mt-3 py-3 px-4 w-fit text-lg  border-2 border-green rounded-md text-red-500"
           onClick={handleReset}
         >
           Reset Filters
