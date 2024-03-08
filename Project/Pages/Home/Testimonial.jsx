@@ -28,7 +28,7 @@ const Testimonial = () => {
   return (
     <div className="flex flex-col gap-5 py-28 w-9/12 mx-auto">
       <div className="mx-auto mb-12">
-        <h2 className="font-bold text-3xl md:text-4xl mb-6 mx-auto">
+        <h2 className="font-bold text-2xl md:text-3xl lg:text-4xl mb-6 mx-auto">
           Still not convinced ?
         </h2>
         <p className="text-lg mx-auto md:text-xl">

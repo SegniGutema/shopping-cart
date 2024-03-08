@@ -24,56 +24,66 @@ const Filter = ({ onFilterChange, onResetFilter }) => {
   };
 
   return (
-    <div className="w-full mx-auto max-w-[1600px] font-bold flex flex-wrap gap-6 px-8 md:px-12 bg-blue-900 text-white py-8 mb-6 shadow-lg">
-      <label htmlFor="category">Category :</label>
-      <select
-        className="flex flex-col gap-6 text-black bg-slate-300 h-6 w-52"
-        id="category"
-        value={selectedCategory}
-        onChange={(e) => setSelectedCategory(e.target.value)}
-      >
-        <option value="">All</option>
-        <option value="electronics">Electronics</option>
-        <option value={"men's clothing"}>{"Men's Clothing"}</option>
-        <option value={"women's clothing"}>{"Women's Clothing"}</option>
-        <option value="jewelery">Jewelry</option>
-      </select>
+    <div className="w-full mx-auto max-w-[1600px] font-bold flex flex-wrap gap-6 px-8 md:px-12 bg-gray-50 text-black py-8 mb-6 shadow-lg">
+      <label htmlFor="category">
+        Category :
+        <select
+          className="ml-3 h-6 w-52"
+          id="category"
+          value={selectedCategory}
+          onChange={(e) => setSelectedCategory(e.target.value)}
+        >
+          <option value="">All</option>
+          <option value="electronics">Electronics</option>
+          <option value={"men's clothing"}>{"Men's Clothing"}</option>
+          <option value={"women's clothing"}>{"Women's Clothing"}</option>
+          <option value="jewelery">Jewelry</option>
+        </select>
+      </label>
 
-      <label htmlFor="min-price">Price Min :</label>
-      <input
-        className=" text-black bg-slate-300 h-6 w-52"
-        type="number"
-        id="min-price"
-        value={minPrice}
-        onChange={(e) => setMinPrice(parseInt(e.target.value, 10))}
-      />
-      <label htmlFor="max-price">Price Max :</label>
-      <input
-        className=" text-black bg-slate-300 h-6 w-52"
-        type="number"
-        id="max-price"
-        value={maxPrice}
-        onChange={(e) => setMaxPrice(parseInt(e.target.value, 10))}
-      />
+      <label htmlFor="min-price">
+        Price Min :
+        <input
+          className="ml-3  h-6 w-52"
+          type="number"
+          id="min-price"
+          value={minPrice}
+          onChange={(e) => setMinPrice(parseInt(e.target.value, 10))}
+        />
+      </label>
 
-      <label>Sort By :</label>
-      <select
-        className="text-black bg-slate-300  h-6 w-52"
-        value={sortDirection}
-        onChange={(e) => setSortDirection(e.target.value)}
-      >
-        <option value="asc">A-Z</option>
-        <option value="desc">Z-A</option>
-      </select>
+      <label htmlFor="max-price">
+        Price Max :
+        <input
+          className="ml-3  h-6 w-52"
+          type="number"
+          id="max-price"
+          value={maxPrice}
+          onChange={(e) => setMaxPrice(parseInt(e.target.value, 10))}
+        />
+      </label>
+
+      <label>
+        Sort By
+        <select
+          className="ml-3 h-6 w-52"
+          value={sortDirection}
+          onChange={(e) => setSortDirection(e.target.value)}
+        >
+          <option value="asc">A-Z</option>
+          <option value="desc">Z-A</option>
+        </select>
+      </label>
+
       <div>
         <button
-          className="py-3 px-4 w-fit bg-green-600 text-lg mr-5"
+          className="py-3 px-4 w-fit hover:border-2 hover:border-green rounded-md text-green-500 text-lg mr-5"
           onClick={handleFilter}
         >
           Apply Filters
         </button>
         <button
-          className="py-3 px-4 w-fit bg-red-600 text-lg"
+          className="mt-3 py-3 px-4 w-fit text-lg  hover:border-2 hover:border-green rounded-md text-red-500"
           onClick={handleReset}
         >
           Reset Filters
