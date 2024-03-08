@@ -41,7 +41,7 @@ const Testimonial = () => {
             <div className="flex gap-3 items-center">
               <img
                 className=""
-                src={testifier.img}
+                src={`${testifier.img}`}
                 alt={testifier.name + "'s-img"}
               />
               <div>
