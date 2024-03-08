@@ -9,7 +9,7 @@ const Product = ({ product, addToCart }) => {
   // eslint-disable-next-line react/prop-types
   const { title, image, price, id } = product;
   const onProductClick = (id) => {
-    navigate(`products/${id}`);
+    navigate(`/products/${id}`);
   };
 
   const handleHover = () => setShowButton(true);

@@ -6,19 +6,19 @@ const Hero = () => {
   return (
     <section
       // style={{ backgroundImage: "url('Project/Assets/slider_1.jpg')" }}
-      className="bg-emerald-500 pb-8 min-h-screen w-full flex gap-10 items-center justify-between px-12 md:px-14 overflow-hidden"
+      className="bg-emerald-500 pb-8 min-h-screen w-screen flex gap-10 items-center justify-between px-12 md:px-14 overflow-hidden"
     >
-      <div className="flex flex-col gap-10 mt-12 max-w-[600px] min-w-1/2">
-        <h1 className="font-bold text-3xl md:text-5xl lg:text-6xl">
+      <div className="flex flex-col gap-10 mt-12 min-w-[1/2]">
+        <h1 className="font-bold text-4xl md:text-5xl lg:text-6xl">
           Panda<span className="text-red-700">Shop</span>
         </h1>
-        <p className="text-lg md:text-xl lg:text-2xl">
+        <p className="text-xl md:text-xl lg:text-2xl">
           Lorem ipsum dolor sit ametvoluptatibus <br />
           voluptatum iure ipsam quae?
           <br />
           oluptatum iure ipsam
         </p>
-        <div className="flex gap-4 items-center">
+        <div className="flex gap-4 items-center max-w-fit">
           <Link to="/products">
             <PrimaryButton>SHOP NOW</PrimaryButton>
           </Link>
